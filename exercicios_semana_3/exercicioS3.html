@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semana 3 - Exercícios</title>
+  </head>
+  <body>
+    <script>
+      //Exercício 1
+
+      let salario = 990;
+      let aumento;
+      let novoSalario;
+
+      switch (true) {
+        case salario <= 280:
+          aumento = salario * 0.2;
+          novoSalario = salario + aumento;
+          break;
+        case salario > 280 && salario <= 700:
+          aumento = salario * 0.15;
+          novoSalario = salario + aumento;
+          break;
+        case salario > 700 && salario <= 1500:
+          aumento = salario * 0.1;
+          novoSalario = salario + aumento;
+          break;
+        case salario > 1500:
+          aumento = salario * 0.05;
+          novoSalario = salario + aumento;
+          break;
+        default:
+          break;
+      }
+
+      console.log(
+        `Salário atual R$ ${salario},00, aumento aplicado 10%, valor do aumento R$ ${aumento},00, novo salário após o aumento R$ ${novoSalario},00.`
+      );
+
+      //Exercício 2
+
+      let numero = 25;
+
+      if (numero % 3 == 0) {
+        console.log(`O número ${numero} é múltiplo de 3`);
+      } else {
+        console.log(`O número ${numero} NÃO é múltiplo de 3`);
+      }
+
+      //Exercício 3
+
+      let total = 0;
+
+      for (let i = 1; i <= 100; i++) {
+        if (i % 5 != 0) {
+          total += i;
+        }
+      }
+
+      console.log(total);
+
+      //Exercício 4
+
+      function quantosCaracteres(nome) {
+        return `O nome ${nome} tem ${nome.length} caracteres.`;
+      }
+
+      console.log(quantosCaracteres("Vinicius"));
+
+      //Exercício 5
+
+      const familia = () => {
+        let membros = ["Adão", "Eva", "José", "Maomé", "Madalena"];
+
+        const adicionarMembro = (novoMembro) => {
+          membros.push(novoMembro);
+          return `${novoMembro} foi adicionado à família`;
+        };
+
+        const listarMembros = () => {
+          let lista = "";
+          membros.forEach((membro) => {
+            lista += `${membro}\n`;
+          });
+
+          return lista;
+        };
+
+        return {
+          adicionarMembro,
+          listarMembros,
+        };
+      };
+
+      const familiaA = familia();
+      console.log(familiaA.adicionarMembro("Damião"));
+      console.log(familiaA.listarMembros());
+
+      //Exercício 6
+
+      function multiplicar(multiplicador) {
+        let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        return numeros.map((numero) => numero * multiplicador);
+      }
+      console.log(numero);
+
+      //Exercicio 7
+
+      function iterarArray(multiplicador) {
+        let resultado = [];
+        for (let num of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+          resultado.push(multiplicador * num);
+        }
+        return resultado;
+      }
+
+      console.log(iterarArray(5));
+
+      //Exercício 8
+
+      const multiplicarPor = (multiplicador) => {
+        let array = [];
+        for (let i = 1; i <= 10; i++) {
+          array.push(i * multiplicador);
+        }
+        return array;
+      };
+
+      console.log(multiplicarPor(5));
+
+      //Exercício 9
+
+      const persons = [
+        {
+          name: "João",
+          habilities: ["Programação", "Desenho"],
+        },
+        {
+          name: "Maria",
+          habilities: ["Redação", "Matemática"],
+        },
+        {
+          name: "Pedro",
+          habilities: ["Contabilidade", "Fotografia"],
+        },
+      ];
+
+      //Operador REST
+      const { name, ...habilities } = persons[0];
+
+      console.log(name);
+      console.log(habilities);
+
+      //Operador SPREAD
+      const person = { ...persons[2], habilities: ["Programação", "Desenho"] };
+
+      console.log(person);
+
+      //Exercício 10
+
+      const usuario = {
+        nome: "Vinícius",
+        sobrenome: "da Silva",
+        endereco: {
+          cidade: "Floripa",
+          estado: "SC",
+        },
+      };
+
+      const {
+        nome,
+        sobrenome,
+        endereco: { cidade, estado },
+      } = usuario;
+
+      console.log(`${nome} ${sobrenome} mora em ${cidade}, ${estado}.`);
+    </script>
+  </body>
+</html>
